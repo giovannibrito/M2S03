@@ -35,4 +35,13 @@ public class Clinica {
     public void adicionaCliente(String nome, double peso, double altura, Integer idade) {
         listaClientes.add(new Cliente(nome, peso, altura, idade));
     }
+
+    public Clinica(String nomeDono) {
+        this.nomeDono = nomeDono;
+    }
+
+    public Clinica(String nomeDono, ArrayList<Cliente> listaClientes) {
+        this.nomeDono = nomeDono;
+        this.listaClientes = listaClientes;
+    }
 }

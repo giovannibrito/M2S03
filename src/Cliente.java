@@ -12,4 +12,9 @@ public class Cliente {
         this.altura = altura;
         this.idade = idade;
     }
+
+    public Cliente(double peso, double altura) {
+        this.peso = peso;
+        this.altura = altura;
+    }
 }
