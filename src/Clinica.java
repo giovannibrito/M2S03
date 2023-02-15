@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Clinica {
     String nomeDono;
     String nomeClinica;
     String cnpj;
     String logradouro;
     Integer codigoClinica;
+    ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
     public static void main(String[] args) {
        calculaIMC(1.82, 82.5);
