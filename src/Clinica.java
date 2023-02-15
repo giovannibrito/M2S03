@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class Clinica {
-    String nomeDono;
-    String nomeClinica;
-    String cnpj;
-    String logradouro;
-    Integer codigoClinica;
-    ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+    private String nomeDono;
+    private String nomeClinica;
+    private String cnpj;
+    private String logradouro;
+    private Integer codigoClinica;
+    private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
     public static void main(String[] args) {
        calculaIMC(1.82, 82.5);
     }
 
-    private static double calculaIMC(double alturaMetro, double pesoKg){
+    public static double calculaIMC(double alturaMetro, double pesoKg){
         double imc = pesoKg/(alturaMetro*alturaMetro);
         if (imc < 18.5) {
             System.out.println("Abaixo do peso normal");
@@ -30,5 +30,9 @@ public class Clinica {
             System.out.println("Não foi possível calcular seu IMC");
         }
         return imc;
+    }
+
+    public void adicionaCliente(String nome, double peso, double altura, Integer idade) {
+        listaClientes.add(new Cliente(nome, peso, altura, idade));
     }
 }
