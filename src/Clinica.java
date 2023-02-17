@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.OptionalDouble;
 
 public class Clinica {
     private String nomeDono;
@@ -8,11 +9,11 @@ public class Clinica {
     private Integer codigoClinica;
     private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
        calculaIMC(1.82, 82.5);
     }
 
-    public static double calculaIMC(double alturaMetro, double pesoKg){
+    public double calculaIMC(double alturaMetro, double pesoKg){
         double imc = pesoKg/(alturaMetro*alturaMetro);
         if (imc < 18.5) {
             System.out.println("Abaixo do peso normal");
@@ -32,6 +33,18 @@ public class Clinica {
         return imc;
     }
 
+    public double tratamento(int id) {
+        double pesoAtual = this.listaClientes.get(id).getPeso();
+        if (!OptionalDouble.of(pesoAtual).isPresent()) {
+            System.out.println("Não foi possível encontrar o cliente");
+            return -1;
+        }
+        double novoPeso = pesoAtual - 5;
+        this.listaClientes.get(id).setPeso(novoPeso);
+        return novoPeso;
+
+    }
+
     public void adicionaCliente(String nome, double peso, double altura, Integer idade) {
         listaClientes.add(new Cliente(nome, peso, altura, idade));
     }
@@ -44,4 +57,6 @@ public class Clinica {
         this.nomeDono = nomeDono;
         this.listaClientes = listaClientes;
     }
+
+
 }

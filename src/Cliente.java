@@ -1,6 +1,15 @@
 public class Cliente {
     private String nome;
     private double peso;
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
     private double altura;
     private Integer idade;
     public static void main(String[] args) {
