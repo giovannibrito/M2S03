@@ -45,6 +45,17 @@ public class Clinica {
 
     }
 
+    public double tratamento(int id, double reducaoDesejada) {
+        double pesoAtual = this.listaClientes.get(id).getPeso();
+        if (!OptionalDouble.of(pesoAtual).isPresent()) {
+            System.out.println("Não foi possível encontrar o cliente");
+            return -1;
+        }
+        double novoPeso = pesoAtual - reducaoDesejada;
+        this.listaClientes.get(id).setPeso(novoPeso);
+        return novoPeso;
+    }
+
     public void adicionaCliente(String nome, double peso, double altura, Integer idade) {
         listaClientes.add(new Cliente(nome, peso, altura, idade));
     }
