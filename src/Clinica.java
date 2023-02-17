@@ -7,6 +7,12 @@ public class Clinica {
     private String cnpj;
     private String logradouro;
     private Integer codigoClinica;
+
+    public ArrayList<Cliente> getListaClientes() {
+        System.out.println(listaClientes.toString());
+        return listaClientes;
+    }
+
     private ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
 
     public void main(String[] args) {
@@ -68,6 +74,8 @@ public class Clinica {
         this.nomeDono = nomeDono;
         this.listaClientes = listaClientes;
     }
+
+
 
 
 }
